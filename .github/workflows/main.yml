@@ -8,15 +8,16 @@ on:
 
 jobs:
   my_job:
-    runs-on:  ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04]
+    runs-on:  ubuntu-18.04
     steps:
-      - name: give it a try
+      - name: gh host ip address
         run: | 
-          sudo apt-get update -y
-          sudo apt-get -y install libsodium23 libsodium-dev
-          sudo apt-get -y install libsystemd0 libsystemd-dev
-          sudo apt-get -y remove --purge software-properties-common
-          sudo apt-get -y autoremove
+          dig +short myip.opendns.com @resolver1.opendns.com
+      - uses: azure/docker-login@v1
+        with:
+          login-server: eusacrtest.azurecr.io
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: get rabbitmq image
+        run: | 
+          docker pull eusacrtest.azurecr.io/rabbitmqtest
