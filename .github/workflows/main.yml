@@ -13,6 +13,7 @@ jobs:
       - name: gh host ip address
         run: | 
           dig +short myip.opendns.com @resolver1.opendns.com
+      - uses: actions/checkout@v2
       - uses: azure/docker-login@v1
         with:
           login-server: eusacrtest.azurecr.io
