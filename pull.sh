@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 count=1000
 while [ $count -gt 0 ]
 do
