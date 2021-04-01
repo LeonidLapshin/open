@@ -1,6 +1,9 @@
 #!/bin/bash -e
 sudo apt-get install tcpdump -y
-count=1
+echo "==="
+ip a
+echo "==="
+count=100
 while [ $count -gt 0 ]
 do
 sudo tcpdump -v -i eth0 & 
