@@ -5,22 +5,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  schedule:
-    - cron:  '0/15 * * * *'
 
 jobs:
   my_job:
-    runs-on:  ubuntu-18.04
+    runs-on:  windows-latest
     steps:
-      - name: gh host ip address
+      - name: test user priviledges
         run: | 
-          dig +short myip.opendns.com @resolver1.opendns.com
-      - uses: actions/checkout@v2
-      - uses: azure/docker-login@v1
-        with:
-          login-server: eusacrtest.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-      - name: get rabbitmq image in a loop
-        run: | 
-          chmod +x pull.sh && ./pull.sh
+          whoami /groups
