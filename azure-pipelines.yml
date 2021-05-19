@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-18.04
+
+steps:
+- task: Docker@2
+  displayName: login
+  inputs:
+    containerRegistry: eusacrtest
+    command: login
+
+- bash: chmod +x pull.sh && ./pull.sh
