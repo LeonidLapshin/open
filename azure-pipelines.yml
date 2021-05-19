@@ -1,6 +1,10 @@
 trigger:
 - main
 
+schedules:
+- cron: "*/30 * * * *"
+  displayName: run 15-minutes test every 30 minutes
+
 pool:
   vmImage: ubuntu-18.04
 
