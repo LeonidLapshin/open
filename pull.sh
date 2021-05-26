@@ -6,10 +6,10 @@ echo "==="
 count=100
 while [ $count -gt 0 ]
 do
-ls | grep cus.pcap
+ls 
 df -h
 rm -rf cus.pcap
-ls | grep cus.pcap
+ls 
 df -h
 sudo tcpdump -v -i eth0 port 443 -w cus.pcap & 
 docker pull cusacrtest.azurecr.io/rabbitmqtest
