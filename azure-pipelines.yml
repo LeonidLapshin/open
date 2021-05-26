@@ -4,11 +4,19 @@ trigger:
 pool:
   vmImage: ubuntu-18.04
 
+schedules:
+- cron: "*/20 * * * *"
+  displayName: run 15-minutes test every 20 minutes in cus region
+  branches:
+    include:
+    - main
+  always: true
+
 steps:
 - task: Docker@2
   displayName: login
   inputs:
-    containerRegistry: eusacrtest
+    containerRegistry: cusacrtest
     command: login
 
 - bash: chmod +x pull.sh && ./pull.sh
