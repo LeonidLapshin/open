@@ -9,10 +9,7 @@ do
     sudo tcpdump -U -v -i eth0 port 443 -w cus.pcap & 
 
     pull_out=$(docker pull cusacrtest.azurecr.io/rabbitmqtest)
-    echo "==="
-    echo $pull_out
-    echo "==="
-    if [[ $pull_out != "*Downloaded newer image*" ]]; then
+    if [[ $pull_out != *"Downloaded newer image"* ]]; then
         sleep 5
         ps -ef | grep 'tcpdump' | grep -v grep | awk '{print $2}' | sudo xargs -r sudo kill -2
         sleep 5
