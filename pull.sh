@@ -3,6 +3,12 @@ sudo apt-get install tcpdump -y
 ip a
 count=100
 
+# get inctancename for troubleshooting
+ls /data/instancename
+
+# get ip 
+curl checkip.amazonaws.com
+
 while [ $count -gt 0 ]
 do
     rm -rf cus.pcap
