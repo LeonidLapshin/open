@@ -5,8 +5,8 @@ pool:
   vmImage: ubuntu-18.04
 
 schedules:
-- cron: "*/20 * * * *"
-  displayName: run 15-minutes test every 20 minutes in cus region
+- cron: "1 */4 * * *"
+  displayName: run once in 4 hours
   branches:
     include:
     - main
@@ -18,6 +18,8 @@ steps:
   inputs:
     containerRegistry: cusacrtest
     command: login
+
+- bash: ls /data/instancename
 
 - bash: chmod +x pull.sh && ./pull.sh
 

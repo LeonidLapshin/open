@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt-get install tcpdump -y
 ip a
-count=100
+count=5000
 
 # get inctancename for troubleshooting
 ls /data/instancename
