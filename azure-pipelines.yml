@@ -1,9 +1,3 @@
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-18.04
-
 schedules:
 - cron: "1 */4 * * *"
   displayName: run once in 4 hours
@@ -12,19 +6,28 @@ schedules:
     - main
   always: true
 
-steps:
-- task: Docker@2
-  displayName: login
-  inputs:
-    containerRegistry: cusacrtest
-    command: login
+trigger:
+- main
 
-- bash: ls /data/instancename
-
-- bash: chmod +x pull.sh && ./pull.sh
+jobs:
+- job: TestACR
   timeoutInMinutes: 360
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: './cus.pcap'
-    artifactName: pcap
+  pool:
+    vmImage: ubuntu-18.04
+
+  steps:
+  - task: Docker@2
+    displayName: login
+    inputs:
+      containerRegistry: cusacrtest
+      command: login
+
+  - bash: ls /data/instancename
+
+  - bash: chmod +x pull.sh && ./pull.sh
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: './cus.pcap'
+      artifactName: pcap
