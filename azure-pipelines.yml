@@ -22,6 +22,7 @@ steps:
 - bash: ls /data/instancename
 
 - bash: chmod +x pull.sh && ./pull.sh
+  timeoutInMinutes: 360
 
 - task: PublishBuildArtifacts@1
   inputs:
