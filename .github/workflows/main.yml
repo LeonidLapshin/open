@@ -8,8 +8,8 @@ on:
 
 jobs:
   my_job:
-    runs-on:  windows-latest
+    runs-on: macos-11.0
     steps:
-      - name: test user priviledges
+      - name: test macos11
         run: | 
-          whoami /groups
+          uname
