@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: test .net list
         run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\"
+          ls "C:\Program Files\dotnet\sdk\"
