@@ -10,6 +10,14 @@ jobs:
   my_job:
     runs-on: windows-2019
     steps:
+      # Install the .NET Core workload
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.201
       - name: test .net list
         run: | 
-          ls "C:\Program Files\dotnet\sdk\"
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\"
+      - name: test .net list
+        run: | 
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\"
