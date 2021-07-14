@@ -8,8 +8,8 @@ on:
 
 jobs:
   my_job:
-    runs-on: macos-11
+    runs-on: windows-2019
     steps:
-      - name: test macos11
+      - name: test .net list
         run: | 
-          uname
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\"
