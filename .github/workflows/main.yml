@@ -21,3 +21,6 @@ jobs:
       - name: test .net list
         run: | 
           ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\"
+      - name: test .net list
+        run: | 
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\"
