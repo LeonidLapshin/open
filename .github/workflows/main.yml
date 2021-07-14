@@ -17,10 +17,10 @@ jobs:
           dotnet-version: 3.1.201
       - name: test .net list
         run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\"
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\"
       - name: test .net list
         run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\"
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\Sdk\"
       - name: test .net list
         run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\"
+          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.NuGet.targets"
