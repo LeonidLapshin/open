@@ -8,19 +8,10 @@ on:
 
 jobs:
   my_job:
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     steps:
-      # Install the .NET Core workload
-      - name: Install .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.201
-      - name: test .net list
+      - name: test
         run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\"
-      - name: test .net list
-        run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\Sdk\"
-      - name: test .net list
-        run: | 
-          ls "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.NuGet.targets"
+          sudo chmod 777 /usr/local/lib/node_modules -R && sudo chmod 777 /usr/local/bin
+      - run: npm install -g pnpm
+      - run: pnpm --version
