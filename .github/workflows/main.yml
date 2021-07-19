@@ -1,17 +1,21 @@
 name: CI
 
 on:
+  schedule:
+    - cron:  '*/3 * * * *'
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  my_job:
+  tests:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: | 
-          sudo chmod 777 /usr/local/lib/node_modules -R && sudo chmod 777 /usr/local/bin
-      - run: npm install -g pnpm
-      - run: pnpm --version
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: |
+          npm install
