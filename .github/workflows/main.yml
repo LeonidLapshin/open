@@ -11,4 +11,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: netstat -an
+      - run: cat c:\\data\\instancename\\instanceName
       - run: get-service
