@@ -12,6 +12,6 @@ jobs:
     steps:
       - run: netstat -an
       - run: Get-ChildItem c:\\data\\instancename
-      - run: hostname
       - run: get-service
       - run: get-netfirewallrule -all
+      - run: hostname
