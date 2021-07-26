@@ -1,11 +1,3 @@
-schedules:
-- cron: "1 */4 * * *"
-  displayName: run once in 4 hours
-  branches:
-    include:
-    - main
-  always: true
-
 trigger:
 - main
 
