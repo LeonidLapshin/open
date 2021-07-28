@@ -8,10 +8,6 @@ on:
 
 jobs:
   tests:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
-      - run: netstat -an
-      - run: Get-ChildItem c:\\data\\instancename
-      - run: get-service
-      - run: get-netfirewallrule -all
-      - run: hostname
+      - run: printenv
