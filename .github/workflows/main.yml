@@ -8,6 +8,6 @@ on:
 
 jobs:
   tests:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - run: sudo apt-get install -f cmake libc-ares-dev libcurl4-openssl-dev libev-dev build-essential clang-tidy-12 clang-12
