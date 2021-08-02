@@ -10,6 +10,6 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
+      - run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
       - run: sudo apt update
-      - run: sudo apt-get --only-upgrade install libllvm12 
       - run: sudo apt-get install -f cmake libc-ares-dev libcurl4-openssl-dev libev-dev build-essential clang-tidy-12 clang-12
