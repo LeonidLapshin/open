@@ -10,7 +10,5 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - run: whereis python
+      - run: echo "DB_VM_INTERNAL_IP=$(hostname)" >> $GITHUB_ENV
+      - run: echo $DB_VM_INTERNAL_IP
