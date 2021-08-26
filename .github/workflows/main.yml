@@ -10,4 +10,7 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
-      - run: llvm-config --version
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - run: whereis python
