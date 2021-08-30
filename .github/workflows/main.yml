@@ -10,5 +10,4 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
-      - run: echo "DB_VM_INTERNAL_IP=$(hostname)" >> $GITHUB_ENV
-      - run: echo $DB_VM_INTERNAL_IP
+      - run: $GITHUB_REF
