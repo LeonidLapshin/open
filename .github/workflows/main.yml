@@ -10,4 +10,5 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
     steps:
-      - run: $GITHUB_REF
+      - run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+      - run: echo $BRANCH
