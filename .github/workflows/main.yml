@@ -12,4 +12,4 @@ jobs:
     steps:
 
       - name: cdktf older version
-        run: npm install --global cdktf-cli@0.6.2
+        run: npm install --global cdktf-cli@0.6.3
