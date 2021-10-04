@@ -8,11 +8,8 @@ on:
 
 jobs:
   tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - run: echo ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      - name: cdktf older version
+        run: npm install --global cdktf-cli@0.6.2
