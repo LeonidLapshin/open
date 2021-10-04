@@ -8,7 +8,6 @@ on:
 
 jobs:
   tests:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
-      - run: ls -la ~
-      - run: ls -la ~/.ssh
+      - run: yarn cache dir
