@@ -7,9 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
+  env:
+    scriptPath: "source/BuildScripts"
   tests:
     runs-on: ubuntu-latest
     steps:
 
       - name: cdktf older version
-        run: npm install --global cdktf-cli@0.6.3
+        run: echo $scriptPath
