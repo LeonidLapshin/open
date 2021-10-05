@@ -10,7 +10,7 @@ jobs:
   tests:
     env:
       scriptPath: "source/BuildScripts"
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
 
       - name: cdktf older version
