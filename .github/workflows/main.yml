@@ -13,5 +13,7 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - name: cdktf older version
-        run: echo $env:scriptPath
+      - run: echo ${{ github.job }}
+      - run: echo ${{ github.run_id }}
+      - run: echo ${{ github.run_number }}
+      - run: echo ${{ github.run_attempt }}
