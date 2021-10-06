@@ -13,7 +13,5 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - run: echo ${{ github.job }}
-      - run: echo ${{ github.run_id }}
-      - run: echo ${{ github.run_number }}
-      - run: echo ${{ github.run_attempt }}
+      - run: echo ${{ github.workspace }}
+      - run: echo $env:WORKSPACE
