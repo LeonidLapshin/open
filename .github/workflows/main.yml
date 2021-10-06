@@ -10,6 +10,7 @@ jobs:
   tests:
     env:
       scriptPath: "source/BuildScripts"
+      WORKSPACE: ${{ github.workspace }}
     runs-on: windows-latest
     steps:
 
