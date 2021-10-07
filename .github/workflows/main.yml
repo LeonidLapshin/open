@@ -14,5 +14,10 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - run: echo ${{ github.workspace }}
-      - run: echo $env:WORKSPACE
+    - name: Set variables
+      run: | 
+        echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+    - name: Set card variables
+      run: | 
+        echo 'FULL_URL=$("http://bla-auto-"$BRANCH".gg.gg/")' >> $GITHUB_ENV
