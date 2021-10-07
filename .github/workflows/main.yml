@@ -24,4 +24,4 @@ jobs:
 
     - name: Set card variables
       run: | 
-        echo $FULL_URL
+        echo $env:FULL_URL
