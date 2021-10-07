@@ -11,17 +11,9 @@ jobs:
     env:
       scriptPath: "source/BuildScripts"
       WORKSPACE: ${{ github.workspace }}
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
 
     - name: Set variables
       run: | 
-        echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
-    - name: Set card variables
-      run: | 
-        echo 'FULL_URL="http://bla-auto-"${GITHUB_REF##*/}".gg.gg/"' >> $GITHUB_ENV
-
-    - name: Set card variables
-      run: | 
-        echo ${{ env.FULL_URL }}
+        Get-CimInstance -ClassName Win32_LogicalDisk | Select-Object -Property DeviceID,@{'Name' = 'FreeSpace (GB)'; Expression= { [int]($_.FreeSpace / 1GB) }}
