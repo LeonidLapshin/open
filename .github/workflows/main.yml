@@ -21,3 +21,7 @@ jobs:
     - name: Set card variables
       run: | 
         echo 'FULL_URL=$("http://bla-auto-"$BRANCH".gg.gg/")' >> $GITHUB_ENV
+
+    - name: Set card variables
+      run: | 
+        echo $FULL_URL
